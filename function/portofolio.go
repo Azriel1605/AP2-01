@@ -11,7 +11,7 @@ func AddPortofolio(A *data.TabCrypto,
 	name string,
 	quantity int) {
 	var i, j, idxC int
-	i = SequencialSearchPorto(P, name)
+	i = SequencialSearchPorto(P, name, false)
 	if i != -1 {
 		P[i].Quantity += quantity
 
@@ -32,11 +32,7 @@ func SellPortofolio(P *data.TabPorto, name string, n int){
 	// F.S Menjual crypto dari portofolio P
 	// Jika crypto tidak ditemukan, tampilkan pesan "Tidak ditemukan"
 
-	var i int = SequencialSearchPorto(P, name)
-
-	if i == -1 { // Kalau tidak ada nama crypto di portofolio
-		fmt.Println("Tidak ditemukan")
-	} 
+	var i int = SequencialSearchPorto(P, name, true)
 		
 	if i != -1 { // Kalau ada nama di portofolio
 		if P[i].Quantity < n {
@@ -60,7 +56,7 @@ func RmPortofolio(P *data.TabPorto,
 	// I.S P terdefinisi, name terdefinisi
 	// F.S Menghapus crypto dari portofolio P
 
-	var i int = SequencialSearchPorto(P, name)
+	var i int = SequencialSearchPorto(P, name, true)
 	if i != -1 {
 		P[i].Name = ""
 		P[i].Quantity = 0

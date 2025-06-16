@@ -45,7 +45,7 @@ func Jual(P *data.TabPorto) {
 	var quantity int
 	fmt.Println("Masukkan nama crypto yang ingin dijual: ")
 	fmt.Scan(&name)
-	i = SequencialSearchPorto(P, name)
+	i = SequencialSearchPorto(P, name, true)
 	if i != -1 {
 		fmt.Println("Masukkan jumlah crypto yang ingin dijual: ")
 		fmt.Scan(&quantity)

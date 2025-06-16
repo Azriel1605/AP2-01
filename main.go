@@ -71,7 +71,7 @@ func main() {
 			
 			fmt.Println("Sebelum diurutkan")
 			function.ShowPortofolio(&v.Porto)
-			function.SelectionSortPorto(&v.Porto)
+			function.InsertionSortPorto(&v.Porto)
 			fmt.Print("\n\n\n")
 			fmt.Println("Setelah diurutkan")
 			function.ShowPortofolio(&v.Porto)

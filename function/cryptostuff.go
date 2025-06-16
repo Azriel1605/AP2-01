@@ -73,7 +73,7 @@ func UpdateCrypto(A *data.TabCrypto) { // DONE
 	if i != -1 {
 		fmt.Println("Masukkan harga crypto yang baru: ")
 		fmt.Scan(&A[i].Price)
-		idxP = SequencialSearchPorto(&v.Porto, name)
+		idxP = SequencialSearchPorto(&v.Porto, name, true)
 		if idxP != -1 {
 			v.Porto[idxP].MarketPrice = A[i].Price
 		}

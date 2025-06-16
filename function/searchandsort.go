@@ -45,7 +45,7 @@ func SequencialSearchCrypto(A *data.TabCrypto, name string, showNotFound bool) i
 }
 
 
-func SequencialSearchPorto(P *data.TabPorto, name string) int {
+func SequencialSearchPorto(P *data.TabPorto, name string, showNotFound bool) int {
 	// I.S P terdefinisi, name terdefinisi
 	// F.S Mengembalikan indeks dari nama crypto yang dicari menggunakan algoritma sequential search, jika tidak ditemukan mengembalikan -1
 	var i int
@@ -54,7 +54,9 @@ func SequencialSearchPorto(P *data.TabPorto, name string) int {
 			return i
 		}
 	}
-	fmt.Println("Crypto tidak ditemukan")
+	if showNotFound{
+		fmt.Println("Crypto tidak ditemukan")
+	}
 	return -1
 }
 
