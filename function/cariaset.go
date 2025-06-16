@@ -13,6 +13,7 @@ func CariCrypto(A *data.TabCrypto) {
 	var name string
 	fmt.Println("Masukkan nama crypto yang ingin dicari: ")
 	fmt.Scan(&name)
+	InsertionSortCrypto(A) // Pastikan array A sudah terurut sebelum melakukan binary search
 	i = BinarySearchCrypto(*A, name)
 	if i != -1 {
 		fmt.Printf("\n\nLokasi Index : %d\nNama Crypto: %s\nHarga Beli: %.0f\n", i, A[i].Name, A[i].Price)

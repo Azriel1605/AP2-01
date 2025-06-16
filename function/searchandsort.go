@@ -141,3 +141,22 @@ func InsertionSortPorto(P *data.TabPorto) {
 		P[j+1] = temp
 	}
 }
+
+func InsertionSortCrypto(A *data.TabCrypto) {
+	// I.S A terdefinisi
+	// F.S A terurut berdasarkan nama crypto secara ascending menggunakan algoritma insertion sort
+
+	var i, n, j int
+	var temp data.TCrypto
+
+	n = LengtOfExistingData(A) //Menampilkan banyakya data yang terisi
+	for i = 1; i < n; i++ {
+		j = i - 1
+		temp = A[i]
+		for j >= 0 && A[j].Name > temp.Name {
+			A[j+1] = A[j]
+			j--
+		}
+		A[j+1] = temp
+	}
+}
